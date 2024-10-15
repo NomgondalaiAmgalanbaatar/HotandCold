@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot and Cold Game by Isaac Zeng</title>
+    <title>Hot and Cold Game by Isaac is fat and ugly, with no coding experience loser</title>
     <style>
-        table, th, td{
+        table,
+        th,
+        td {
             border: 1px solid black;
             border-collapse: collapse;
         }
     </style>
     <script>
-        function initialize()
-        {
+        function initialize() {
             numberOutput = document.getElementById("number")
             guessOutput = document.getElementById("guess")
             guessLeftOutput = document.getElementById("guessLeft")
@@ -27,7 +29,7 @@
             row4col2 = document.getElementById("r4c2")
             row5col1 = document.getElementById("r5c1")
             row5col2 = document.getElementById("r5c2")
-            
+
             response = ""
             guess = 50
             guessRemaining = 5
@@ -38,211 +40,173 @@
             display()
         }
 
-        function addOne()
-        {
+        function addOne() {
             guess += 1
             display()
         }
 
-        function addFive()
-        {
+        function addFive() {
             guess += 5
             display()
         }
 
-        function addTen()
-        {
+        function addTen() {
             guess += 10
             display()
         }
 
-        function addTwentyFive()
-        {
+        function addTwentyFive() {
             guess += 25
             display()
         }
 
-        function subOne()
-        {
+        function subOne() {
             guess += -1
             display()
         }
 
-        function subFive()
-        {
+        function subFive() {
             guess += -5
             display()
         }
 
-        function subTen()
-        {
+        function subTen() {
             guess += -10
             display()
         }
 
-        function subTwentyFive()
-        {
+        function subTwentyFive() {
             guess += -25
             display()
         }
 
-        function resetBut()
-        {
+        function resetBut() {
             guess = 50
             randNum = Math.floor(Math.random() * 100) + 1
             guessRemaining = 5
             response = ""
-            
+
             display()
         }
 
-        function commitBut()
-        {
-            if(guess > 100 && guessRemaining >= 1)
-            {
+        function commitBut() {
+            if (guess > 100 && guessRemaining >= 1) {
                 window.alert("Invalid guess! Only choose numbers between 1 and 100")
             }
-            else if (guess < 1 && guessRemaining >= 1)
-            {
+            else if (guess < 1 && guessRemaining >= 1) {
                 window.alert("Invalid guess! Only choose numbers between 1 and 100")
             }
 
-            if(guess == randNum)
-            {
+            if (guess == randNum) {
                 response = "You won!"
                 win = true
                 window.alert("You win!")
             }
-            else if(Math.abs(randNum - guess) <= 5)
-            {
+            else if (Math.abs(randNum - guess) <= 5) {
                 response = "Very Hot"
             }
-            else if(Math.abs(randNum - guess) >= 6 && Math.abs(randNum - guess)  <= 8)
-            {
+            else if (Math.abs(randNum - guess) >= 6 && Math.abs(randNum - guess) <= 8) {
                 response = "Hot"
             }
-            else if(Math.abs(randNum - guess)  >= 9 && Math.abs(randNum - guess)  <= 15)
-            {
+            else if (Math.abs(randNum - guess) >= 9 && Math.abs(randNum - guess) <= 15) {
                 response = "Very Warm"
             }
-            else if(Math.abs(randNum - guess)  >= 16 && Math.abs(randNum - guess)  <= 20)
-            {
+            else if (Math.abs(randNum - guess) >= 16 && Math.abs(randNum - guess) <= 20) {
                 response = "Warm"
             }
-            else if(Math.abs(randNum - guess)  >= 21 && Math.abs(randNum - guess)  <=30)
-            {
+            else if (Math.abs(randNum - guess) >= 21 && Math.abs(randNum - guess) <= 30) {
                 response = "Cool"
             }
-            else if(Math.abs(randNum - guess)  >= 31 && Math.abs(randNum - guess)  <= 40)
-            {
+            else if (Math.abs(randNum - guess) >= 31 && Math.abs(randNum - guess) <= 40) {
                 response = "Very Cool"
             }
-            else if(Math.abs(randNum - guess)  >= 41 && Math.abs(randNum - guess) <= 55)
-            {
+            else if (Math.abs(randNum - guess) >= 41 && Math.abs(randNum - guess) <= 55) {
                 response = "Cold"
             }
-            else
-            {
+            else {
                 response = "Very Cold"
             }
 
-            if(row == 5 && guess <= 100  && guess >= 1)
-            {
+            if (row == 5 && guess <= 100 && guess >= 1) {
                 changeRow1()
-                if(!response == "Very Hot")
-                {
+                if (!response == "Very Hot") {
                     guessRemaining -= 1
                 }
                 row--
             }
-            else if (row == 4 && guess <= 100  && guess >= 1)
-            {
+            else if (row == 4 && guess <= 100 && guess >= 1) {
                 changeRow2()
-                if(!response == "Very Hot")
-                {
+                if (!response == "Very Hot") {
                     guessRemaining -= 1
                 }
                 row--
             }
-            else if(row == 3 && guess <= 100  && guess >= 1)
-            {
+            else if (row == 3 && guess <= 100 && guess >= 1) {
                 changeRow3()
-                if(!response == "Very Hot")
-                {
+                if (!response == "Very Hot") {
                     guessRemaining -= 1
                 }
                 row--
             }
-            else if(row == 2 && guess <= 100  && guess >= 1)
-            {
+            else if (row == 2 && guess <= 100 && guess >= 1) {
                 changeRow4()
-                if(!response == "Very Hot")
-                {
+                if (!response == "Very Hot") {
                     guessRemaining -= 1
                 }
                 row--
             }
-            else if(row == 1 && guess <= 100  && guess >= 1)
-            {
+            else if (row == 1 && guess <= 100 && guess >= 1) {
                 changeRow5()
-                if(!response == "Very Hot")
-                {
+                if (!response == "Very Hot") {
                     guessRemaining -= 1
                 }
                 row--
             }
-            else if(row == 0 && guess <= 100  && guess >= 1)
-            {
+            else if (row == 0 && guess <= 100 && guess >= 1) {
                 window.alert("You are out of guesses!")
             }
 
             display()
             response = ""
 
-            if(win)
-            {
+            if (win) {
                 numberOutput.innerHTML = randNum
             }
             console.log(row5col2.innerHTML)
         }
 
-        function changeRow1()
-        {
+        function changeRow1() {
             row1col1.innerHTML = guess
             row1col2.innerHTML = response
         }
 
-        function changeRow2()
-        {
+        function changeRow2() {
             row2col1.innerHTML = guess
             row2col2.innerHTML = response
         }
 
-        function changeRow3()
-        {
+        function changeRow3() {
             row3col1.innerHTML = guess
             row3col2.innerHTML = response
         }
 
-        function changeRow4()
-        {
+        function changeRow4() {
             row4col1.innerHTML = guess
             row4col2.innerHTML = response
         }
 
-        function changeRow5()
-        {
+        function changeRow5() {
             row5col1.innerHTML = guess
             row5col2.innerHTML = response
         }
 
-        function display()
-        {
+        function display() {
             guessOutput.innerHTML = guess
             guessLeftOutput.innerHTML = guessRemaining
         }
     </script>
 </head>
+
 <body onload="initialize()">
     <h3>
         <span>Correct Number: </span>
@@ -309,4 +273,5 @@
     <button onclick="resetBut()">Reset</button>
     <button onclick="commitBut()">Commit</button>
 </body>
+
 </html>
